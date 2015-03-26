@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <!--        Some METAs-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+<!--        Older IE Support-->
+        <!--[if lt IE 9]>
+            <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+        <![endif]-->
+        <!--        Webcomponets Support-->
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        
+        <!--        HTML Imports-->
+        <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+        <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+        <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+        <link rel="import" href="bower_components/paper-button/paper-button.html">
+      <title>Seat Mixer</title>
+
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            paper-shadow{
+                margin: 8px;
+                padding: 8px;
+                text-align: center;
+            }
+            body{
+                font-family: 'Nanum Gothic', serif;
+            }
+        </style>
+    </head>
+    <body>
+
+                <core-toolbar>
+                    <span flex>Seat Mixer(by Youngbin Han)</span>
+                    <paper-icon-button icon="archive" onclick="href('https://github.com/sukso96100/seatmixer')"></paper-icon-button>
+                </core-toolbar>
+        <div align="center">
+        <br>
+        <paper-button onclick="href('2014zion211.html')" raised>2014 학년도 시온고 2-11</paper-button><br><br>
+        <paper-button onclick="href('2015zion312.html')" raised>2015 학년도 시온고 3-12</paper-button>
+        </div>
+        
+        <script>
+            function href(target){
+    location.href = target.toString()
+}
+        </script>
+       
+    </body>
+  </html>
