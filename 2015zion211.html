@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Seat Changer</title>
+      <link rel="stylesheet" href="css/bootstrap.css">
+        
+        <style>
+        .content-area{
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 2em;
+        }
+        </style>
+        
+        
+        
+    </head>
+<div align="center">
+    <body class="content-area">
+        <div class="alert alert-info" role="alert" id="info">
+            자리를 섞으려면 하단에 위치한 지금 자리 섞기 버튼을 누르세요</div>
+        
+        <div class="well">
+                2학년 11반 자리 걍 막 섞기<br>
+            《창문 | 교탁 | 문》
+          </div>
+           
+        </div>
+<div class="row">
+    
+<!--    1st Line-->
+  <div class="col-md-2">
+    <div class="well" id="1">16</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="2">9</div>
+    </div>
+     <div class="col-md-2">
+    <div class="well" id="3">8</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="4">33</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="5">22</div>
+    </div>
+     <div class="col-md-2">
+    <div class="well" id="6">24</div>
+         </div>
+         
+<!--    2nd Line-->
+    <div class="col-md-2">
+        <div class="well" id="7">28</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="8">5</div>
+    </div>
+     <div class="col-md-2">
+         <div class="well" id="9">32</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="10">27</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="11">17</div>
+    </div>
+     <div class="col-md-2">
+    <div class="well" id="12">15</div>
+    </div>
+   
+    <!--    3rd Line-->
+    <div class="col-md-2">
+    <div class="well" id="13">4</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="14">30</div>
+    </div>
+     <div class="col-md-2">
+    <div class="well" id="15">23</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="16">31</div>
+    </div>
+    <div class="col-md-2">
+    <div class="well" id="17">18</div>
+    </div>
+     <div class="col-md-2">
+    <div class="well" id="18">34</div>
+    </div>
+    
+    <!--    4th Line-->
+  <div class="col-md-2">
+      <div class="well" id="19">26</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="20">10</div>
+    </div>
+     <div class="col-md-2">
+         <div class="well" id="21">7</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="22">25</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="23">29</div>
+    </div>
+     <div class="col-md-2">
+        <div class="well" id="24">11</div>
+         </div>
+         
+<!--    5th Line-->
+    <div class="col-md-2">
+        <div class="well" id="25">12</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="26">6</div>
+    </div>
+     <div class="col-md-2">
+         <div class="well" id="27">19</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="28">21</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="29">2</div>
+    </div>
+     <div class="col-md-2">
+         <div class="well" id="30">13</div>
+    </div>
+   
+    <!--    6th Line-->
+    <div class="col-md-2">
+        <div class="well" id="31">1</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well">X</div>
+    </div>
+     <div class="col-md-2">
+        <div class="well" id="32">20</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well" id="33">14</div>
+    </div>
+    <div class="col-md-2">
+        <div class="well">X</div>
+    </div>
+     <div class="col-md-2">
+        <div class="well">X</div>
+    </div>
+    </div>
+    <br>
+    <div align="center">
+    <button type="button" class="btn btn-default btn-lg" onclick="startTask()">
+  <span class="glyphicon glyphicon-refresh"></span> 지금 자리 섞기
+</button></div>
+    
+    
+<!--<script src="js/parsescripts.js"></script>-->
+<!--<script src="js/goto.js"></script>-->
+<script src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+    
+        function startTask(){
+            setTimeout(mixNow, 3000);
+            document.getElementById("info").innerHTML="3초후 섞인 자리가 나타납니다. 3초 기다려야 하시는 이유는 아실 필요 없음 ㅇㅅㅇ";
+        }
+        
+        function mixNow()
+             {
+                 
+                   document.getElementById("info").innerHTML="섞인 자리를 확인하세요!";
+//                 변수 초기화
+                var DuplicateCheckArray=[];
+                var SeatArray=[];
+                var DuplicateCheckBoolean;
+                var random;
+                 
+                DuplicateCheckArray = null;
+                DuplicateCheckArray = [];
+                SeatArray = null;
+                SeatArray = [];
+                DuplicateCheckBoolean = null;
+                random = null;
+                
+                 
+                 console.log("mixNow function"); 
+              
+                 
+                 var loop = 1;
+                 while(loop<=33){
+                     
+                  
+                     
+                  random = Math.floor((Math.random() * 34)+1); //난수 생성
+                DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
+                
+                if(DuplicateCheckBoolean==true){
+                console.log("Duplicated!"+random.toString());
+                }
+                else if(random==3){
+                }
+                else{
+                    
+                DuplicateCheckArray.push(random);
+                var Seat = document.getElementById(loop.toString());
+                Seat.innerHTML=random.toString();
+                loop++;}
+                     
+                 }
+                 
+               
+                 
+//                 좌석 초기화
+//                 for(seatnum=1;seatnum<=33;seatnum++){
+//               
+//                var Seat = document.getElementById(seatnum.toString());
+//                Seat.innerHTML="빈 자리";
+//                
+                
+            }
+                 
+//            중복여부 및 전출자 확인
+//                 var seatnum=1;
+//            for(seatnum=1;seatnum<=33;seatnum++){
+//
+//                random = Math.floor((Math.random() * 34)+1); //난수 생성
+//                DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
+//                
+//                if(DuplicateCheckBoolean==true){
+//                console.log("Duplicated!"+random.toString());
+//                }
+//                else if(random==3){
+//                }
+//                else{
+//                DuplicateCheckArray.push(random);
+//                var Seat = document.getElementById(seatnum.toString());
+//                Seat.innerHTML=random.toString();}
+//                
+//                
+//            }
+//        }
+//        
+        function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+    </script>
+      <script src="js/bootstrap.js"></script>
+   
+    </body>
+  </html>
