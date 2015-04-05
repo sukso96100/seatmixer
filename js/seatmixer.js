@@ -2,6 +2,8 @@ var WIDTH;
 var HEIGHT;
 var SEATCOUNT;
 var ABOVETEXT;
+var EXA;
+var EXB;
 
 function createTable(width,height){
     WIDTH = width;
@@ -12,7 +14,7 @@ function createTable(width,height){
     for(i=0; i<height; i++){
         table = table + '<tr>';
         for(j=0; j<width; j++){
-            table = table + '<td><paper-shadow><core-menu-button><paper-button id="'+seats+'">?</paper-button><core-dropdown class="dropdown" layered><core-menu><paper-item>자리교환</paper-item><paper-item onclick="disableSeat('+seats+')">자리 사용/비사용</paper-item></core-menu></core-dropdown></core-menu-button></paper-shadow></td>';
+            table = table + '<td><paper-shadow><core-menu-button><paper-button id="'+seats+'">?</paper-button><core-dropdown class="dropdown" layered><core-menu><paper-item onclick="exchangeSeat('+seats+')">자리교환</paper-item><paper-item onclick="disableSeat('+seats+')">자리 사용/비사용</paper-item></core-menu></core-dropdown></core-menu-button></paper-shadow></td>';
             seats++;
             }
         table = table + '</tr>';
@@ -113,4 +115,21 @@ function disableSeat(seatnum){
            console.log("disabling seat : "+seatnum.toString())
        seatext.innerHTML = "X";
        }
+}
+
+function exchangeSeat(target){
+    var A;
+    var B;
+    if(EXA == undefined){
+        EXA = target;
+        A = document.getElementById(EXA.toString()).innerHTML;
+    }else{
+        EXB = target;
+        B = document.getElementById(EXB.toString()).innerHTML;
+        document.getElementById(EXA.toString()).innerHTML = B;
+        document.getElementById(EXB.toString()).innerHTML = A;
+        showToast("자리가 교환되었습니다:"+EXA.toString()+"<->"+EXB.toString());
+        EXA = undefined;
+        EXB = undefined;
+    }
 }
