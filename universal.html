@@ -36,6 +36,11 @@
                 margin: 8px;
                 text-align: center;
             }
+            .abovetext{
+                padding: 8px;
+                margin: 8px;
+                text-align: center;
+            }
             body{
                 font-family: 'Nanum Gothic', serif;
             }
@@ -56,19 +61,19 @@
                 </core-toolbar>
         <core-collapse id="pref">
         <paper-input-decorator label="가로방향 자리 수 입력">
-                               <input type="number" id="width">
+                               <input type="number" id="width" value="5">
                             </paper-input-decorator>
             <paper-input-decorator label="세로방향 자리 수 입력">
-                               <input type="number" id="height">
+                               <input type="number" id="height" value="6">
                             </paper-input-decorator>
             <paper-input-decorator label="자리 배정 받지 않을 사람의 번호(여러명인 경우, 쉼표로 구분)">
                                <input type="text" id="exception">
                             </paper-input-decorator>
             <paper-input-decorator label="마지막 사람 번호 또는 총 인원수">
-                               <input type="number" id="lastnum">
+                               <input type="number" id="lastnum" value="29">
                             </paper-input-decorator>
             <paper-input-decorator label="상단에 표시할 문구 입력">
-                               <input type="text" id="abovetext">
+                               <input type="text" id="abovetext" value="2015 학년도 시온고 3-12<br><- 운동장 | 교탁 | 복도 ->">
                             </paper-input-decorator>
             <paper-button onclick="setUpSeats()">자리 만들기</paper-button>
         </core-collapse>

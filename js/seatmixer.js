@@ -1,17 +1,18 @@
 var WIDTH;
 var HEIGHT;
 var SEATCOUNT;
+var ABOVETEXT;
 
 function createTable(width,height){
     WIDTH = width;
     HEIGHT = height;
     var seats = 1;
     var table;
-    table = '<table style="width:100%">';
+    table = '<paper-shadow z="1" class="abovetext">'+ABOVETEXT+'</paper-shadow><table style="width:100%">';
     for(i=0; i<height; i++){
         table = table + '<tr>';
         for(j=0; j<width; j++){
-            table = table + '<td><paper-shadow><core-menu-button><paper-button id="'+seats+'">'+seats+'</paper-button><core-dropdown class="dropdown" layered><core-menu><paper-item>자리교환</paper-item><paper-item>자리 사용/비사용</paper-item></core-menu></core-dropdown></core-menu-button></paper-shadow></td>';
+            table = table + '<td><paper-shadow><core-menu-button><paper-button id="'+seats+'">?</paper-button><core-dropdown class="dropdown" layered><core-menu><paper-item>자리교환</paper-item><paper-item onclick="disableSeat('+seats+')">자리 사용/비사용</paper-item></core-menu></core-dropdown></core-menu-button></paper-shadow></td>';
             seats++;
             }
         table = table + '</tr>';
@@ -49,18 +50,24 @@ function startTask(){
               
                  
                  var loop = 1;
-                 while(loop<=SEATCOUNT){
-                  random = Math.floor((Math.random() * SEATCOUNT)+1); //난수 생성
+                 while(loop<=WIDTH*HEIGHT){
+                  random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
                 DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
                 
                 if(DuplicateCheckBoolean==true){
                 console.log("Duplicated!"+random.toString());
                 }else{
                      
-                     DuplicateCheckArray.push(random);
+                     
                 var Seat = document.getElementById(loop.toString());
-                Seat.innerHTML=random.toString();
-                loop++;
+                    if(Seat.innerHTML!="X"){
+                        if(random<=SEATCOUNT){
+                        Seat.innerHTML=random.toString();
+                            DuplicateCheckArray.push(random);
+                        }
+                    
+                    }
+                    loop++;
                 }
                  }
                  setTimeout(function(){
@@ -90,8 +97,20 @@ function toggleSettings(){
 }
 
 function setUpSeats(){
+ABOVETEXT = document.getElementById("abovetext").value;
 WIDTH = document.getElementById("width").value;
 HEIGHT = document.getElementById("height").value;
 SEATCOUNT = document.getElementById("lastnum").value;
     createTable(WIDTH,HEIGHT);
+}
+
+function disableSeat(seatnum){
+    var seatext = document.getElementById(seatnum.toString());
+    if(seatext.innerHTML=="X"){
+        console.log("enabling seat : "+seatnum.toString())
+       seatext.innerHTML = "?";
+       }else{
+           console.log("disabling seat : "+seatnum.toString())
+       seatext.innerHTML = "X";
+       }
 }
