@@ -10,11 +10,11 @@ function createTable(width,height){
     HEIGHT = height;
     var seats = 1;
     var table;
-    table = '<paper-shadow z="1" class="abovetext">'+ABOVETEXT+'</paper-shadow><table style="width:100%">';
+    table = '<paper-material z="1" class="abovetext">'+ABOVETEXT+'</paper-material><table style="width:100%">';
     for(i=0; i<height; i++){
         table = table + '<tr>';
         for(j=0; j<width; j++){
-            table = table + '<td><paper-shadow><core-menu-button><paper-button id="'+seats+'">?</paper-button><core-dropdown class="dropdown" layered><core-menu><paper-item onclick="exchangeSeat('+seats+')">자리교환</paper-item><paper-item onclick="disableSeat('+seats+')">자리 사용/비사용</paper-item></core-menu></core-dropdown></core-menu-button></paper-shadow></td>';
+            table = table + '<td><paper-material><paper-button id="'+seats+'">?</paper-button></paper-material></td>';
             seats++;
             }
         table = table + '</tr>';
@@ -22,7 +22,7 @@ function createTable(width,height){
     table = table + '</table>';
     var area = document.getElementById("seats");
     area.innerHTML = table;
-} 
+}
 
 
 function startTask(){
@@ -30,44 +30,44 @@ function startTask(){
             setTimeout(mixNow, 3000);
 //            document.getElementById("info").innerHTML="3초후 섞인 자리가 나타납니다. 3초 기다려야 하시는 이유는 아실 필요 없음 ㅇㅅㅇ";
         }
-        
+
         function mixNow(){
-                 
+
 //                   document.getElementById("info").innerHTML="섞인 자리를 확인하세요!";
 //                 변수 초기화
                 var DuplicateCheckArray=[];
                 var SeatArray=[];
                 var DuplicateCheckBoolean;
                 var random;
-                 
+
                 DuplicateCheckArray = null;
                 DuplicateCheckArray = [];
                 SeatArray = null;
                 SeatArray = [];
                 DuplicateCheckBoolean = null;
                 random = null;
-                
-                 
-                 console.log("mixNow function"); 
-              
-                 
+
+
+                 console.log("mixNow function");
+
+
                  var loop = 1;
                  while(loop<=WIDTH*HEIGHT){
                   random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
                 DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
-                
+
                 if(DuplicateCheckBoolean==true){
                 console.log("Duplicated!"+random.toString());
                 }else{
-                     
-                     
+
+
                 var Seat = document.getElementById(loop.toString());
                     if(Seat.innerHTML!="X"){
                         if(random<=SEATCOUNT){
                         Seat.innerHTML=random.toString();
                             DuplicateCheckArray.push(random);
                         }
-                    
+
                     }
                     loop++;
                 }
@@ -75,23 +75,23 @@ function startTask(){
                  setTimeout(function(){
                      showToast("자리 섞기가 끝났습니다. 변경된 자리를 확인하세요.")
                  },1000);
-                     
-                
+
+
             }
-                 
+
         function isInArray(value, array) {
   return array.indexOf(value) > -1;
 }
-        
+
         function href(target){
     location.href = target.toString()
 }
-        
+
         function showToast(textmsg) {
-    console.log("Showing Toast Message");
-    var toast = document.getElementById("toast");
-    toast.setAttribute("text", textmsg);
-    toast.show();
+    // console.log("Showing Toast Message");
+    // var toast = document.getElementById("toast");
+    // toast.setAttribute("text", textmsg);
+    // toast.show();
   }
 
 function toggleSettings(){

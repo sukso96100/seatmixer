@@ -5,24 +5,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
 <!--        Older IE Support-->
         <!--[if lt IE 9]>
             <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
         <![endif]-->
         <!--        Webcomponets Support-->
-        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-        
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
         <!--        HTML Imports-->
-        <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-        <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+        <link rel="import" href="bower_components/paper-material/paper-material.html">
         <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
       <title>Seat Mixer</title>
 
         <style>
             @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-            paper-shadow{
+            paper-material{
                 margin: 8px;
                 padding: 8px;
                 text-align: center;
@@ -34,103 +35,103 @@
     </head>
     <body>
 
-                <core-toolbar>
+                <paper-toolbar>
                   <span flex>Seat Mixer
                   </span>
                     <paper-icon-button icon="refresh" onclick="startTask()"></paper-icon-button>
                     <paper-icon-button icon="archive" onclick="href('https://github.com/sukso96100/seatmixer')"></paper-icon-button>
                     <paper-icon-button icon="home" onclick="href('https://youngbin.tk')"></paper-icon-button>
-                </core-toolbar>
-        <paper-shadow z="1">2015학년도 시온고 3-12 <br>
-        ← 운동장 | 교탁 | 복도 →</paper-shadow>
-                      <table style="width:100%">      
+                </paper-toolbar>
+        <paper-material z="1">2015학년도 시온고 3-12 <br>
+        ← 운동장 | 교탁 | 복도 →</paper-material>
+                      <table style="width:100%">
     <tr>
-        <td><paper-shadow z="1" id="1">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="2">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="3">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="4">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="5">?</paper-shadow></td>
+        <td><paper-material z="1" id="1">?</paper-material></td>
+        <td><paper-material z="1" id="2">?</paper-material></td>
+        <td><paper-material z="1" id="3">?</paper-material></td>
+        <td><paper-material z="1" id="4">?</paper-material></td>
+        <td><paper-material z="1" id="5">?</paper-material></td>
     </tr>
    <tr>
-        <td><paper-shadow z="1" id="6">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="7">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="8">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="9">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="10">?</paper-shadow></td>
+        <td><paper-material z="1" id="6">?</paper-material></td>
+        <td><paper-material z="1" id="7">?</paper-material></td>
+        <td><paper-material z="1" id="8">?</paper-material></td>
+        <td><paper-material z="1" id="9">?</paper-material></td>
+        <td><paper-material z="1" id="10">?</paper-material></td>
     </tr>
     <tr>
-        <td><paper-shadow z="1" id="11">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="12">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="13">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="14">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="15">?</paper-shadow></td>
+        <td><paper-material z="1" id="11">?</paper-material></td>
+        <td><paper-material z="1" id="12">?</paper-material></td>
+        <td><paper-material z="1" id="13">?</paper-material></td>
+        <td><paper-material z="1" id="14">?</paper-material></td>
+        <td><paper-material z="1" id="15">?</paper-material></td>
     </tr>
     <tr>
-        <td><paper-shadow z="1" id="16">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="17">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="18">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="19">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="20">?</paper-shadow></td>
+        <td><paper-material z="1" id="16">?</paper-material></td>
+        <td><paper-material z="1" id="17">?</paper-material></td>
+        <td><paper-material z="1" id="18">?</paper-material></td>
+        <td><paper-material z="1" id="19">?</paper-material></td>
+        <td><paper-material z="1" id="20">?</paper-material></td>
     </tr>
     <tr>
-        <td><paper-shadow z="1" id="21">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="22">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="23">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="24">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="25">?</paper-shadow></td>
+        <td><paper-material z="1" id="21">?</paper-material></td>
+        <td><paper-material z="1" id="22">?</paper-material></td>
+        <td><paper-material z="1" id="23">?</paper-material></td>
+        <td><paper-material z="1" id="24">?</paper-material></td>
+        <td><paper-material z="1" id="25">?</paper-material></td>
     </tr>
     <tr>
-        <td><paper-shadow z="1" id="x">X</paper-shadow></td>
-        <td><paper-shadow z="1" id="26">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="27">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="28">?</paper-shadow></td>
-        <td><paper-shadow z="1" id="29">?</paper-shadow></td>
+        <td><paper-material z="1" id="x">X</paper-material></td>
+        <td><paper-material z="1" id="26">?</paper-material></td>
+        <td><paper-material z="1" id="27">?</paper-material></td>
+        <td><paper-material z="1" id="28">?</paper-material></td>
+        <td><paper-material z="1" id="29">?</paper-material></td>
     </tr>
 </table>
-                    
-        
-        
-         
+
+
+
+
 
     <br>
-    
+
     <script type="text/javascript">
-    
+
         function startTask(){
             showToast("자리 섞기를 시작합니다")
             setTimeout(mixNow, 3000);
 //            document.getElementById("info").innerHTML="3초후 섞인 자리가 나타납니다. 3초 기다려야 하시는 이유는 아실 필요 없음 ㅇㅅㅇ";
         }
-        
+
         function mixNow(){
-                 
+
 //                   document.getElementById("info").innerHTML="섞인 자리를 확인하세요!";
 //                 변수 초기화
                 var DuplicateCheckArray=[];
                 var SeatArray=[];
                 var DuplicateCheckBoolean;
                 var random;
-                 
+
                 DuplicateCheckArray = null;
                 DuplicateCheckArray = [];
                 SeatArray = null;
                 SeatArray = [];
                 DuplicateCheckBoolean = null;
                 random = null;
-                
-                 
-                 console.log("mixNow function"); 
-              
-                 
+
+
+                 console.log("mixNow function");
+
+
                  var loop = 1;
                  while(loop<=29){
                   random = Math.floor((Math.random() * 29)+1); //난수 생성
                 DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
-                
+
                 if(DuplicateCheckBoolean==true){
                 console.log("Duplicated!"+random.toString());
                 }else{
-                     
+
                      DuplicateCheckArray.push(random);
                 var Seat = document.getElementById(loop.toString());
                 Seat.innerHTML=random.toString();
@@ -140,18 +141,18 @@
                  setTimeout(function(){
                      showToast("자리 섞기가 끝났습니다. 변경된 자리를 확인하세요.")
                  },1000);
-                     
-                
+
+
             }
-                 
+
         function isInArray(value, array) {
   return array.indexOf(value) > -1;
 }
-        
+
         function href(target){
     location.href = target.toString()
 }
-        
+
         function showToast(textmsg) {
     console.log("Showing Toast Message");
     var toast = document.getElementById("toast");

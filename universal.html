@@ -5,34 +5,30 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
 <!--        Older IE Support-->
         <!--[if lt IE 9]>
             <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
         <![endif]-->
         <!--        Webcomponets Support-->
-        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-        
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
         <!--        HTML Imports-->
-        <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+        <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-        <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
-        <link rel="import" href="bower_components/paper-toast/paper-toast.html">
-        <link rel="import" href="bower_components/core-collapse/core-collapse.html">
+        <link rel="import" href="bower_components/paper-material/paper-material.html">
         <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
-        <link rel="import" href="bower_components/core-menu-button/core-menu-button.html">
-        <link rel="import" href="bower_components/core-dropdown/core-dropdown.html">
-        <link rel="import" href="bower_components/core-menu/core-menu.html">
         <link rel="import" href="bower_components/paper-item/paper-item.html">
         <link rel="import" href="bower_components/paper-button/paper-button.html">
-        
-        
+        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+
         <script src="js/seatmixer.js"></script>
       <title>Seat Mixer</title>
 
         <style>
             @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-            paper-shadow{
+            paper-material{
                 margin: 8px;
                 text-align: center;
             }
@@ -44,7 +40,7 @@
             body{
                 font-family: 'Nanum Gothic', serif;
             }
-            
+
             #pref{
                  margin: 8px;
                 padding: 8px;
@@ -53,12 +49,12 @@
     </head>
     <body>
 
-                <core-toolbar>
+                <paper-toolbar>
                   <span flex>Seat Mixer(2015학년도 시온고 3-12)</span>
                     <paper-icon-button icon="refresh" onclick="startTask()"></paper-icon-button>
                     <paper-icon-button icon="archive" onclick="href('https://github.com/sukso96100/seatmixer')"></paper-icon-button>
                     <paper-icon-button icon="settings" onclick="toggleSettings()"></paper-icon-button>
-                </core-toolbar>
+                </paper-toolbar>
         <core-collapse id="pref">
         <paper-input-decorator label="가로방향 자리 수 입력">
                                <input type="number" id="width" value="5">
@@ -78,14 +74,14 @@
             <paper-button onclick="setUpSeats()">자리 만들기</paper-button>
         </core-collapse>
         <div id="seats"></div>
-       
-                    
-        
-        
-         
+
+
+
+
+
 
     <br>
-    
+
    <paper-toast id="toast"></paper-toast>
     </body>
   </html>
