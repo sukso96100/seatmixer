@@ -1,11 +1,10 @@
 {
-  "name": "paper-toast",
-  "version": "1.0.0",
-  "description": "A material design notification toast",
-  "private": true,
+  "name": "paper-toast-top",
+  "description": "A material design notification toast that appears on the top",
+  "private": false,
   "license": "http://polymer.github.io/LICENSE.txt",
   "authors": [
-    "The Polymer Authors"
+    "Youngbin Han<sukso96100@gmail.com>"
   ],
   "keywords": [
     "web-components",
@@ -13,7 +12,7 @@
     "toast",
     "notification"
   ],
-  "main": "paper-toast.html",
+  "main": "paper-toast-top.html",
   "dependencies": {
     "paper-styles": "PolymerElements/paper-styles#^1.0.0",
     "polymer": "Polymer/polymer#^1.0.0",
@@ -25,15 +24,15 @@
     "web-component-tester": "*",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
-  "homepage": "https://github.com/PolymerElements/paper-toast",
-  "_release": "1.0.0",
+  "homepage": "https://github.com/sukso96100/paper-toast-top",
+  "_release": "11b5b1a699",
   "_resolution": {
-    "type": "version",
-    "tag": "v1.0.0",
-    "commit": "71e6c327f7aafe9c71010c83d4c4571f63990072"
+    "type": "branch",
+    "branch": "master",
+    "commit": "11b5b1a69966c7c2a19ef4c5b7c74823334550e7"
   },
-  "_source": "git://github.com/PolymerElements/paper-toast.git",
-  "_target": "^1.0.0",
-  "_originalSource": "PolymerElements/paper-toast",
+  "_source": "git://github.com/sukso96100/paper-toast-top.git",
+  "_target": "*",
+  "_originalSource": "sukso96100/paper-toast-top",
   "_direct": true
 }

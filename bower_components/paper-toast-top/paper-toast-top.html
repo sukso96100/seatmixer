@@ -16,31 +16,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 `paper-toast` provides a subtle notification toast.
 
 @group Paper Elements
-@element paper-toast
+@element paper-toast-top
 @demo demo/index.html
 @hero hero.svg
 -->
-<dom-module id="paper-toast">
+<dom-module id="paper-toast-top">
   <style>
     :host {
-
-      top: 0;
-      left: 0;
-      width: 100%;
-      min-width: 0;
-      border-radius: 0;
-      text-align: center;
-
       display: inline-block;
       position: fixed;
 
       background: #323232;
       color: #f1f1f1;
       min-height: 48px;
+      min-width: 288px;
       padding: 16px 24px 12px;
       box-sizing: border-box;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-      font-size: 20px;
+      border-radius: 2px;
+      top: 12px;
+      left: 12px;
+      font-size: 14px;
       cursor: default;
 
       -webkit-transition: visibility 0.3s, -webkit-transform 0.3s;
@@ -56,13 +52,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-radius: 24px;
     }
 
+    :host(.large) {
+      font-size: 20px;
+    }
+
     :host(.fit-top) {
       top: 0;
       left: 0;
       width: 100%;
       min-width: 0;
       border-radius: 0;
+    }
+
+    :host(.centered) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-width: 0;
+      border-radius: 0;
       text-align: center;
+    }
+
+    :host(.light) {
+      background: #f1f1f1;
+      color: #323232;
     }
 
     :host(.paper-toast-open){
@@ -81,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 (function() {
 
   var PaperToast = Polymer({
-    is: 'paper-toast',
+    is: 'paper-toast-top',
 
     properties: {
       /**

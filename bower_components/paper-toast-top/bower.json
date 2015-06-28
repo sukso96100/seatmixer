@@ -1,11 +1,11 @@
 {
-  "name": "paper-toast",
+  "name": "paper-toast-top",
   "version": "1.0.0",
-  "description": "A material design notification toast",
-  "private": true,
+  "description": "A material design notification toast that appears on the top",
+  "private": false,
   "license": "http://polymer.github.io/LICENSE.txt",
   "authors": [
-    "The Polymer Authors"
+    "Youngbin Han<sukso96100@gmail.com>"
   ],
   "keywords": [
     "web-components",
@@ -13,7 +13,7 @@
     "toast",
     "notification"
   ],
-  "main": "paper-toast.html",
+  "main": "paper-toast-top.html",
   "dependencies": {
     "paper-styles": "PolymerElements/paper-styles#^1.0.0",
     "polymer": "Polymer/polymer#^1.0.0",
