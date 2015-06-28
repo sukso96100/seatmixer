@@ -99,12 +99,13 @@ function toggleSettings(){
 }
 
 function setUpSeats(){
+  togglePref(false);
 ABOVETEXT = document.getElementById("abovetext").value;
 WIDTH = document.getElementById("width").value;
 HEIGHT = document.getElementById("height").value;
 SEATCOUNT = document.getElementById("lastnum").value;
     createTable(WIDTH,HEIGHT);
-    togglePref(false);
+
 }
 
 function disableSeat(seatnum){

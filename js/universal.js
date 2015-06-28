@@ -1,8 +1,11 @@
-var collapse-toolbar = document.getElementById("toolbar")
-var collapse-pref = document.getElementById('pref')
-var collapse-seats = document.getElementById('collapse-seats')
+var collapse-toolbar;
+var collapse-pref;
+var collapse-seats;
 
 function setUpPage(){
+  collapse-toolbar = document.getElementById("toolbar")
+  collapse-pref = document.getElementById('pref')
+  collapse-seats = document.getElementById('collapse-seats')
 
   collapse-toolbar.hide();
   collapse-seats.hide;
