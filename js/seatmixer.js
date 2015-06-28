@@ -104,6 +104,7 @@ WIDTH = document.getElementById("width").value;
 HEIGHT = document.getElementById("height").value;
 SEATCOUNT = document.getElementById("lastnum").value;
     createTable(WIDTH,HEIGHT);
+    togglePref(false);
 }
 
 function disableSeat(seatnum){

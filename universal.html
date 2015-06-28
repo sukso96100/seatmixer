@@ -25,17 +25,7 @@
         <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
 
         <script src="js/seatmixer.js"></script>
-        <script>
-        function setupPage(){
-          var collapse-toolbar = document.getElementById("toolbar")
-          var collapse-pref = document.getElementById('pref')
-          var collapse-seats = document.getElementById('collapse-seats')
-
-          collapse-toolbar.opened = false;
-          collapse-seats.opened = false;
-          collapse-pref.toggle();
-        }
-        </script>
+        <script src="js/universal.js"></script>
 
         </script>
       <title>Seat Mixer</title>
@@ -57,7 +47,7 @@
 
         </style>
     </head>
-    <body onload="setupPage()">
+    <body onload="setUpPage()">
 <iron-collapse id="toolbar">
                 <paper-toolbar>
                   <span flex>Seat Mixer(2015학년도 시온고 3-12)</span>
@@ -66,7 +56,7 @@
                     <paper-icon-button icon="settings" onclick="toggleSettings()"></paper-icon-button>
                 </paper-toolbar>
               </iron-collapse>
-        <iron-collapse id="pref">
+        <iron-collapse id="pref" opened="true">
           <paper-material style="padding: 8px;">
         <paper-input-container ><label>가로방향 자리 수 입력</label>
                                <input class="paper-input-input" type="number" id="width" value="5">
