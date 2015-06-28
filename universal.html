@@ -17,11 +17,12 @@
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
-        <link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
+        <link rel="import" href="bower_components/paper-input/paper-input-container.html">
         <link rel="import" href="bower_components/paper-item/paper-item.html">
         <link rel="import" href="bower_components/paper-button/paper-button.html">
         <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+        <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
 
         <script src="js/seatmixer.js"></script>
       <title>Seat Mixer</title>
@@ -55,24 +56,26 @@
                     <paper-icon-button icon="archive" onclick="href('https://github.com/sukso96100/seatmixer')"></paper-icon-button>
                     <paper-icon-button icon="settings" onclick="toggleSettings()"></paper-icon-button>
                 </paper-toolbar>
-        <core-collapse id="pref">
-        <paper-input-decorator label="가로방향 자리 수 입력">
+        <iron-collapse id="pref">
+          <paper-material style="padding: 8px;">
+        <paper-input-container ><label>가로방향 자리 수 입력</label>
                                <input type="number" id="width" value="5">
-                            </paper-input-decorator>
-            <paper-input-decorator label="세로방향 자리 수 입력">
+                            </paper-input-container>
+            <paper-input-container ><label>세로방향 자리 수 입력</label>
                                <input type="number" id="height" value="6">
-                            </paper-input-decorator>
-            <paper-input-decorator label="자리 배정 받지 않을 사람의 번호(여러명인 경우, 쉼표로 구분)">
-                               <input type="text" id="exception">
-                            </paper-input-decorator>
-            <paper-input-decorator label="마지막 사람 번호 또는 총 인원수">
+                            </paper-input-container>
+            <paper-input-container ><label>자리 배치할 사람 이름 모두 입력(예 : '홍길동','전우치','임꺽정')</label>
+                               <input type="text" id="list">
+                            </paper-input-container>
+            <paper-input-container ><label>사용하지 않는 좌석 번호 모두 입력(예 : 3,7,10)</label>
                                <input type="number" id="lastnum" value="29">
-                            </paper-input-decorator>
-            <paper-input-decorator label="상단에 표시할 문구 입력">
+                            </paper-input-container>
+            <paper-input-container ><label>상단에 표시할 문구 입력</label>
                                <input type="text" id="abovetext" value="2015 학년도 시온고 3-12<br><- 운동장 | 교탁 | 복도 ->">
-                            </paper-input-decorator>
+                            </paper-input-container>
             <paper-button onclick="setUpSeats()">자리 만들기</paper-button>
-        </core-collapse>
+          </paper-material>
+        </iron-collapse>
         <div id="seats"></div>
 
 
