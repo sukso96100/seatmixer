@@ -12,14 +12,8 @@ function setUpPage(){
   // collapsePref.show;
 }
 
-function togglePref(ToggleBoolean){
-  if(ToggleBoolean==true){
-    collapseToolbar.hide();
-    collapseSeats.hide();
-    collapsePref.show();
-  }else{
-    collapseToolbar.show();
-    collapseSeats.show();
-    collapsePref.hide();
-  }
+function togglePref(){
+    collapseToolbar.toggle();
+    collapseSeats.toggle();
+    collapsePref.toggle();
 }

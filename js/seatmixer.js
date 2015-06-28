@@ -99,7 +99,7 @@ function toggleSettings(){
 }
 
 function setUpSeats(){
-  togglePref(false);
+  togglePref();
 ABOVETEXT = document.getElementById("abovetext").value;
 WIDTH = document.getElementById("width").value;
 HEIGHT = document.getElementById("height").value;
