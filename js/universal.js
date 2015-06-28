@@ -7,9 +7,9 @@ function setUpPage(){
   collapsePref = document.getElementById("pref")
   collapseSeats = document.getElementById("collapse-seats")
 
-  collapseToolbar.hide();
-  collapseSeats.hide;
-  collapsePref.show;
+  // collapseToolbar.hide();
+  // collapseSeats.hide;
+  // collapsePref.show;
 }
 
 function togglePref(ToggleBoolean){
