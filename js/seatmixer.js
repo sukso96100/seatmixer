@@ -1,9 +1,8 @@
 var WIDTH;
 var HEIGHT;
-var SEATCOUNT;
 var ABOVETEXT;
-var EXA;
-var EXB;
+var PEOPLELIST;
+var UNUSEDSEATS;
 
 function createTable(width,height){
     WIDTH = width;
@@ -14,7 +13,7 @@ function createTable(width,height){
     for(i=0; i<height; i++){
         table = table + '<tr>';
         for(j=0; j<width; j++){
-            table = table + '<td><paper-material><paper-button id="'+seats+'">?</paper-button></paper-material></td>';
+            table = table + '<td><paper-material style="padding:4px;"><p style="font-size:12px;">'+seats+'</p><p style="font-size:20px;" id="'+seats+'"></p></paper-material></td>';
             seats++;
             }
         table = table + '</tr>';
@@ -50,28 +49,28 @@ function startTask(){
 
                  console.log("mixNow function");
 
-
-                 var loop = 1;
-                 while(loop<=WIDTH*HEIGHT){
-                  random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
-                DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
-
-                if(DuplicateCheckBoolean==true){
-                console.log("Duplicated!"+random.toString());
-                }else{
-
-
-                var Seat = document.getElementById(loop.toString());
-                    if(Seat.innerHTML!="X"){
-                        if(random<=SEATCOUNT){
-                        Seat.innerHTML=random.toString();
-                            DuplicateCheckArray.push(random);
-                        }
-
-                    }
-                    loop++;
-                }
-                 }
+                for(var i=0; i<10; i++){}
+                //  var loop = 1;
+                //  while(loop<=WIDTH*HEIGHT){
+                //   random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
+                // DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
+                //
+                // if(DuplicateCheckBoolean==true){
+                // console.log("Duplicated!"+random.toString());
+                // }else{
+                //
+                //
+                // var Seat = document.getElementById(loop.toString());
+                //     if(Seat.innerHTML!="X"){
+                //         if(random<=SEATCOUNT){
+                //         Seat.innerHTML=random.toString();
+                //             DuplicateCheckArray.push(random);
+                //         }
+                //
+                //     }
+                //     loop++;
+                // }
+                //  }
                  setTimeout(function(){
                      showToast("자리 섞기가 끝났습니다. 변경된 자리를 확인하세요.")
                  },1000);
@@ -88,10 +87,10 @@ function startTask(){
 }
 
         function showToast(textmsg) {
-    // console.log("Showing Toast Message");
-    // var toast = document.getElementById("toast");
-    // toast.setAttribute("text", textmsg);
-    // toast.show();
+    console.log("Showing Toast Message");
+    var toast = document.getElementById("toast");
+    toast.setAttribute("text", textmsg);
+    toast.show();
   }
 
 function toggleSettings(){
