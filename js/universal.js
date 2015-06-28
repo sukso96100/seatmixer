@@ -1,25 +1,25 @@
-var collapse-toolbar;
-var collapse-pref;
-var collapse-seats;
+var collapseToolbar;
+var collapsePref;
+var collapseSeats;
 
 function setUpPage(){
-  collapse-toolbar = document.getElementById("toolbar")
-  collapse-pref = document.getElementById('pref')
-  collapse-seats = document.getElementById('collapse-seats')
+  collapseToolbar = document.getElementById("toolbar")
+  collapsePref = document.getElementById("pref")
+  collapseSeats = document.getElementById("collapse-seats")
 
-  collapse-toolbar.hide();
-  collapse-seats.hide;
-  collapse-pref.show;
+  collapseToolbar.hide();
+  collapseSeats.hide;
+  collapsePref.show;
 }
 
 function togglePref(ToggleBoolean){
   if(ToggleBoolean==true){
-    collapse-toolbar.hide();
-    collapse-seats.hide();
-    collapse-pref.show();
+    collapseToolbar.hide();
+    collapseSeats.hide();
+    collapsePref.show();
   }else{
-    collapse-toolbar.show();
-    collapse-seats.show();
-    collapse-pref.hide();
+    collapseToolbar.show();
+    collapseSeats.show();
+    collapsePref.hide();
   }
 }
