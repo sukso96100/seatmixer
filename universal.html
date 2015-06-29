@@ -51,11 +51,27 @@
     <body onload="setUpPage()">
 <iron-collapse id="toolbar">
                 <paper-toolbar>
-                  <span class="flex">Seat Mixer(범용))</span>
+                  <span class="flex">Seat Mixer(범용)</span>
                     <paper-icon-button icon="refresh" onclick="startTask()"></paper-icon-button>
-                    <paper-icon-button icon="archive" onclick="href('https://github.com/sukso96100/seatmixer')"></paper-icon-button>
+                    <paper-icon-button icon="find-replace" onclick="toggleSeatExchange()"></paper-icon-button>
                     <paper-icon-button icon="settings" onclick="togglePref()"></paper-icon-button>
+                    <paper-icon-button icon="info" ></paper-icon-button>
                 </paper-toolbar>
+              </iron-collapse>
+              <iron-collapse id="exchange" >
+                <paper-material style="padding: 8px;">
+                  <h3>자리 교환</h3>
+              <paper-input-container >
+                <label>교환할 좌석의 번호 하나만 입력</label>
+                                     <input class="paper-input-input" type="number" id="seata">
+                                  </paper-input-container>
+                  <paper-input-container >
+                    <label>다른 좌석의 번호 하나만 입력</label>
+                                     <input class="paper-input-input" type="number" id="seatb">
+                                  </paper-input-container>
+
+                  <paper-button >자리 교환하기</paper-button>
+                </paper-material>
               </iron-collapse>
         <iron-collapse id="pref" opened="true">
           <paper-material style="padding: 8px;">
