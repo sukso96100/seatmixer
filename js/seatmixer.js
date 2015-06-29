@@ -33,28 +33,40 @@ function startTask(){
         function mixNow(){
 
                 var PeopleArray;
-                
+                var FilledSeats;
 
-                var DuplicateCheckArray=[];
-                var SeatArray=[];
+                PeopleArray = JSON.parse("[" + PEOPLELIST + "]");
+                FilledSeats = JSON.parse("[" + UNUSEDSEATS + "]");
+
+                console.log(PeopleArray);
+                console.log(FilledSeats);
+
                 var DuplicateCheckBoolean;
                 var random;
 
-                DuplicateCheckArray = null;
-                DuplicateCheckArray = [];
-                SeatArray = null;
-                SeatArray = [];
+
                 DuplicateCheckBoolean = null;
                 random = null;
 
 
                  console.log("mixNow function");
+                for(var i=1; i<=WIDTH*HEIGHT;i++){
+                  var Seat = document.getElementById(i.toString());
+                  Seat.innerHTML="";
+                }
 
-                for(var i=0; i<10; i++){}
+                for(var i=0; i<PeopleArray.length; i++){
+                  DuplicateCheckBoolean = true;
+                  while (DuplicateCheckBoolean==true) {
+                    random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
+                    DuplicateCheckBoolean = isInArray(random, FilledSeats)
+                  }
+                  var Seat = document.getElementById(random.toString());
+                  Seat.innerHTML=PeopleArray[i];
+                  FilledSeats.push(random);
+                }
                 //  var loop = 1;
                 //  while(loop<=WIDTH*HEIGHT){
-                //   random = Math.floor((Math.random() * WIDTH * HEIGHT)+1); //난수 생성
-                // DuplicateCheckBoolean = isInArray(random, DuplicateCheckArray);
                 //
                 // if(DuplicateCheckBoolean==true){
                 // console.log("Duplicated!"+random.toString());
