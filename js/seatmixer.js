@@ -32,8 +32,9 @@ function startTask(){
 
         function mixNow(){
 
-//                   document.getElementById("info").innerHTML="섞인 자리를 확인하세요!";
-//                 변수 초기화
+                var PeopleArray;
+                
+
                 var DuplicateCheckArray=[];
                 var SeatArray=[];
                 var DuplicateCheckBoolean;
@@ -102,35 +103,36 @@ function setUpSeats(){
 ABOVETEXT = document.getElementById("abovetext").value;
 WIDTH = document.getElementById("width").value;
 HEIGHT = document.getElementById("height").value;
-SEATCOUNT = document.getElementById("lastnum").value;
+PEOPLELIST = document.getElementById("list").value;
+UNUSEDSEATS = document.getElementById("unused").value;
     createTable(WIDTH,HEIGHT);
 
 }
 
-function disableSeat(seatnum){
-    var seatext = document.getElementById(seatnum.toString());
-    if(seatext.innerHTML=="X"){
-        console.log("enabling seat : "+seatnum.toString())
-       seatext.innerHTML = "?";
-       }else{
-           console.log("disabling seat : "+seatnum.toString())
-       seatext.innerHTML = "X";
-       }
-}
+// function disableSeat(seatnum){
+//     var seatext = document.getElementById(seatnum.toString());
+//     if(seatext.innerHTML=="X"){
+//         console.log("enabling seat : "+seatnum.toString())
+//        seatext.innerHTML = "?";
+//        }else{
+//            console.log("disabling seat : "+seatnum.toString())
+//        seatext.innerHTML = "X";
+//        }
+// }
 
 function exchangeSeat(target){
-    var A;
-    var B;
-    if(EXA == undefined){
-        EXA = target;
-        A = document.getElementById(EXA.toString()).innerHTML;
-    }else{
-        EXB = target;
-        B = document.getElementById(EXB.toString()).innerHTML;
-        document.getElementById(EXA.toString()).innerHTML = B;
-        document.getElementById(EXB.toString()).innerHTML = A;
-        showToast("자리가 교환되었습니다:"+EXA.toString()+"<->"+EXB.toString());
-        EXA = undefined;
-        EXB = undefined;
-    }
+    // var A;
+    // var B;
+    // if(EXA == undefined){
+    //     EXA = target;
+    //     A = document.getElementById(EXA.toString()).innerHTML;
+    // }else{
+    //     EXB = target;
+    //     B = document.getElementById(EXB.toString()).innerHTML;
+    //     document.getElementById(EXA.toString()).innerHTML = B;
+    //     document.getElementById(EXB.toString()).innerHTML = A;
+    //     showToast("자리가 교환되었습니다:"+EXA.toString()+"<->"+EXB.toString());
+    //     EXA = undefined;
+    //     EXB = undefined;
+    // }
 }
