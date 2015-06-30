@@ -13,7 +13,7 @@ function createTable(width,height){
     for(i=0; i<height; i++){
         table = table + '<tr>';
         for(j=0; j<width; j++){
-            table = table + '<td><paper-material style="padding:4px;"><p style="font-size:12px;"><b>'+seats+'</b></p><p style="font-size:20px;" id="'+seats+'"></p></paper-material></td>';
+            table = table + '<td><paper-material style="padding:4px;"><p style="font-size:12px;"><b>'+seats+'</b></p><p style="font-size:20px;" id="'+seats+'">?</p></paper-material></td>';
             seats++;
             }
         table = table + '</tr>';
@@ -65,25 +65,7 @@ function startTask(){
                   Seat.innerHTML=PeopleArray[i];
                   FilledSeats.push(random);
                 }
-                //  var loop = 1;
-                //  while(loop<=WIDTH*HEIGHT){
-                //
-                // if(DuplicateCheckBoolean==true){
-                // console.log("Duplicated!"+random.toString());
-                // }else{
-                //
-                //
-                // var Seat = document.getElementById(loop.toString());
-                //     if(Seat.innerHTML!="X"){
-                //         if(random<=SEATCOUNT){
-                //         Seat.innerHTML=random.toString();
-                //             DuplicateCheckArray.push(random);
-                //         }
-                //
-                //     }
-                //     loop++;
-                // }
-                //  }
+
                  setTimeout(function(){
                      showToast("자리 섞기가 끝났습니다. 변경된 자리를 확인하세요.")
                  },1000);
@@ -121,30 +103,16 @@ UNUSEDSEATS = document.getElementById("unused").value;
 
 }
 
-// function disableSeat(seatnum){
-//     var seatext = document.getElementById(seatnum.toString());
-//     if(seatext.innerHTML=="X"){
-//         console.log("enabling seat : "+seatnum.toString())
-//        seatext.innerHTML = "?";
-//        }else{
-//            console.log("disabling seat : "+seatnum.toString())
-//        seatext.innerHTML = "X";
-//        }
-// }
 
-function exchangeSeat(target){
-    // var A;
-    // var B;
-    // if(EXA == undefined){
-    //     EXA = target;
-    //     A = document.getElementById(EXA.toString()).innerHTML;
-    // }else{
-    //     EXB = target;
-    //     B = document.getElementById(EXB.toString()).innerHTML;
-    //     document.getElementById(EXA.toString()).innerHTML = B;
-    //     document.getElementById(EXB.toString()).innerHTML = A;
-    //     showToast("자리가 교환되었습니다:"+EXA.toString()+"<->"+EXB.toString());
-    //     EXA = undefined;
-    //     EXB = undefined;
-    // }
+
+function exchangeSeat(){
+  var SeatANum = document.getElementById("seata").value;
+  var SeatBNum = document.getElementById("seatb").value;
+  var SeatA = document.getElementById(SeatANum.toString());
+  var SeatB = document.getElementById(SeatBNum.toString());
+  var A = SeatA.innerHTML.toString();
+  var B = SeatB.innerHTML.toString();
+  SeatA.innerHTML = B;
+  SeatB.innerHTML = A;
+  showToast("자리 교환됨 : "+SeatANum+"="+A+","+SeatBNum+"="+B+" -> "+SeatANum+"="+B+","+SeatBNum+"="+A)
 }
