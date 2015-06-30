@@ -4,6 +4,11 @@ var ABOVETEXT;
 var PEOPLELIST;
 var UNUSEDSEATS;
 
+var dialogPref;
+var collapseExchange;
+var dialogInfo;
+var mixing;
+
 function createTable(width,height){
     WIDTH = width;
     HEIGHT = height;
@@ -26,6 +31,7 @@ function createTable(width,height){
 
 function startTask(){
             showToast("자리 섞기를 시작합니다")
+            mixing.opened=true;
             setTimeout(mixNow, 3000);
 //            document.getElementById("info").innerHTML="3초후 섞인 자리가 나타납니다. 3초 기다려야 하시는 이유는 아실 필요 없음 ㅇㅅㅇ";
         }
@@ -67,6 +73,7 @@ function startTask(){
                 }
 
                  setTimeout(function(){
+                   mixing.opened=false;
                      showToast("자리 섞기가 끝났습니다. 변경된 자리를 확인하세요.")
                  },1000);
 
@@ -115,4 +122,22 @@ function exchangeSeat(){
   SeatA.innerHTML = B;
   SeatB.innerHTML = A;
   showToast("자리 교환됨 : "+SeatANum+"="+A+","+SeatBNum+"="+B+" -> "+SeatANum+"="+B+","+SeatBNum+"="+A)
+}
+
+function setUpPage(){
+  dialogPref = document.getElementById("pref")
+  collapseExchange = document.getElementById("exchange")
+  dialogInfo = document.getElementById("infomodal")
+  mixing = document.getElementById("mixing")
+  togglePref()
+  showToast("사용하시기 앞서, 설정 수정후 적용하여, 자리를 생성해 주세요.")
+}
+
+function togglePref(){
+    dialogPref.opened=true;
+}
+
+function toggleSeatExchange(){
+    collapseExchange.toggle();
+
 }
