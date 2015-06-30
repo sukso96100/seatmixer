@@ -1,23 +1,17 @@
-var collapseToolbar;
-var collapsePref;
-var collapseSeats;
+var dialogPref;
 var collapseExchange;
+var dialogInfo;
 
 function setUpPage(){
-  collapseToolbar = document.getElementById("toolbar")
-  collapsePref = document.getElementById("pref")
-  collapseSeats = document.getElementById("collapse-seats")
+  dialogPref = document.getElementById("pref")
   collapseExchange = document.getElementById("exchange")
-
-  // collapseToolbar.hide();
-  // collapseSeats.hide;
-  // collapsePref.show;
+  dialogInfo = document.getElementById("infomodal")
+  togglePref()
+  showToast("사용하시기 앞서, 설정 수정후 적용하여, 자리를 생성해 주세요.")
 }
 
 function togglePref(){
-    collapseToolbar.toggle();
-    collapseSeats.toggle();
-    collapsePref.toggle();
+    dialogPref.opened=true;
 }
 
 function toggleSeatExchange(){

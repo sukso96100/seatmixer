@@ -31,6 +31,7 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0",
     "paper-toast": "PolymerElements/paper-toast#^1.0.0",
     "iron-collapse": "PolymerElements/iron-collapse#^1.0.0",
-    "paper-input": "PolymerElements/paper-input#^1.0.0"
+    "paper-input": "PolymerElements/paper-input#^1.0.0",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.0.0"
   }
 }
